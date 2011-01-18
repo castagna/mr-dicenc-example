@@ -22,6 +22,7 @@ public class Run {
 	{
 		long now = System.currentTimeMillis();
 		String conf = "conf/hadoop-localhost.xml";
+		// String conf = "conf/hadoop-local.xml";
 
 		FirstDriver.main(new String[] { "-conf", conf, "src/test/resources/input", "target/" + now + "_output_1"} );
 		SecondDriver.main(new String[] { "-conf", conf, "src/test/resources/input", "target/" + now + "_output_2" } );

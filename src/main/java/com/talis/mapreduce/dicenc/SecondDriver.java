@@ -16,7 +16,6 @@
 
 package com.talis.mapreduce.dicenc;
 
-import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
@@ -38,8 +37,7 @@ public class SecondDriver extends Configured implements Tool {
 			return -1;
 		}
 		
-		Configuration configuration = new Configuration();
-		Job job = new Job(configuration, "second");
+		Job job = new Job(getConf(), "second");
 		job.setJarByClass(getClass());
 		
 		FileInputFormat.addInputPath(job, new Path(args[0]));
@@ -57,7 +55,7 @@ public class SecondDriver extends Configured implements Tool {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		int exitCode = ToolRunner.run(new SecondDriver(), args);
+		/* int exitCode = */ ToolRunner.run(new SecondDriver(), args);
 		// System.exit(exitCode);
 	}
 

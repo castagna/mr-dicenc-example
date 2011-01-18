@@ -29,11 +29,13 @@
       <version>1.5.2</version>
     </dependency>
 
+<!--
     <dependency>
       <groupId>com.hp.hpl.jena</groupId>
       <artifactId>tdb</artifactId>
       <version>${tdb.version}</version>
     </dependency>
+-->
 
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -97,6 +99,16 @@
          <buildOutputDirectory>${project.build.directory}/classes-eclipse</buildOutputDirectory>
          <downloadSources>true</downloadSources>
          <downloadJavadocs>false</downloadJavadocs>
+        </configuration>
+      </plugin>
+
+      <!-- See: http://github.com/akkumar/maven-hadoop -->
+      <plugin>
+        <groupId>com.github.maven-hadoop.plugin</groupId>
+        <artifactId>maven-hadoop-plugin</artifactId>
+        <version>0.20.1</version>
+        <configuration>
+          <hadoopHome>/usr/lib/hadoop</hadoopHome>
         </configuration>
       </plugin>
 
