@@ -22,11 +22,12 @@ public class Run {
 	{
 		long now = System.currentTimeMillis();
 		String conf = "conf/hadoop-localhost.xml";
+		int reducers = 2;
 		// String conf = "conf/hadoop-local.xml";
 
-		FirstDriver.main(new String[] { "-conf", conf, "src/test/resources/input", "target/" + now + "_output_1"} );
-		SecondDriver.main(new String[] { "-conf", conf, "src/test/resources/input", "target/" + now + "_output_2" } );
-		ThirdDriver.main(new String[] { "-conf", conf, "target/" + now + "_output_2", "target/" + now + "_output_3" } );
+		FirstDriver.main(new String[] { "-conf", conf, "-D", "mapred.reduce.tasks=" + reducers, "src/test/resources/input", "target/" + now + "_output_1"} );
+		SecondDriver.main(new String[] { "-conf", conf, "-D", "mapred.reduce.tasks=" + reducers, "src/test/resources/input", "target/" + now + "_output_2" } );
+		ThirdDriver.main(new String[] { "-conf", conf, "-D", "mapred.reduce.tasks=" + reducers, "target/" + now + "_output_2", "target/" + now + "_output_3" } );
 	}
 
 }
