@@ -29,13 +29,11 @@
       <version>1.5.2</version>
     </dependency>
 
-<!--
     <dependency>
       <groupId>com.hp.hpl.jena</groupId>
       <artifactId>tdb</artifactId>
       <version>${tdb.version}</version>
     </dependency>
--->
 
     <dependency>
       <groupId>org.slf4j</groupId>
